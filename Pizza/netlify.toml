@@ -1,0 +1,11 @@
+[[redirects]]
+  from     = "http://andiamopdx.com/*"
+  to       = "https://andiamopdx.com/:splat"
+  status   = 301
+  force    = true
+
+[[redirects]]
+  from     = "http://www.andiamopdx.com/*"
+  to       = "https://www.andiamopdx.com/:splat"
+  status   = 301
+  force    = true
