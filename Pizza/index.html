@@ -26,7 +26,7 @@
       justify-content: center;
       min-height: 100vh;
       text-align: center;
-      padding: 1rem 1rem calc(var(--footer-height) + 1rem);
+      padding: 1rem 1rem calc(var(--footer-height) + 1rem); /* space for footer */
     }
     /* Header logo */
     .header-logo {
@@ -43,15 +43,34 @@
     }
     .spinner-wrap {
       width: clamp(160px, 30vw, 220px);
-      height: auto;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
     .spinner-wrap img {
       display: block;
       width: 100%;
       height: auto;
     }
-    /* Menu button */
+    /* Gift prompt */
+    .gift-text {
+      font-size: clamp(1rem, 5vw, 1.5rem);
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    /* Gift button */
+    .gift-btn {
+      background: #a8e6cf;    /* light green */
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: var(--font-body);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+    /* Menu button: original blue */
     .menu-btn {
       background: var(--accent);
       color: var(--bg);
@@ -124,6 +143,10 @@
     <img src="pizza.gif" alt="Loading Andiamo’s Pizza">
   </div>
 
+  <p class="gift-text">Want to Gift Our Pizza?</p>
+  <a href="https://www.toasttab.com/andiamopdx/giftcards" target="_blank" class="gift-btn">Buy Gift Card</a>
+
+  <!-- Menu button -->
   <button class="menu-btn" id="open-menu">See Our Menu</button>
 
   <!-- Modal for menu -->
@@ -135,7 +158,7 @@
   </div>
 
   <div class="footer">
-    Webdesign By: <a href="https://seatechconsulting.com" target="_blank">Seatech Consulting</a>
+    Presented by <a href="https://seatechconsulting.com" target="_blank">Seatech Consulting</a>
   </div>
 
   <script>
