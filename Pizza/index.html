@@ -12,6 +12,7 @@
       --accent: #09113d;
       --font-body: 'Poppins', sans-serif;
       --font-heading: 'Lobster', cursive;
+      --footer-height: 4rem;
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { width: 100%; min-height: 100%; }
@@ -25,11 +26,12 @@
       justify-content: center;
       min-height: 100vh;
       text-align: center;
-      padding: 1rem 1rem 4rem; /* space for footer */
+      padding: 1rem 1rem calc(var(--footer-height) + 1rem);
     }
     /* Header logo */
     .header-logo {
       width: 350px;
+      max-width: 80%;
       height: auto;
       margin-bottom: 1rem;
     }
@@ -42,13 +44,26 @@
     .spinner-wrap {
       width: clamp(160px, 30vw, 220px);
       height: auto;
-      margin-bottom: 4rem; /* ensure space above footer */
+      margin-bottom: 2rem;
     }
     .spinner-wrap img {
       display: block;
       width: 100%;
       height: auto;
     }
+    /* Menu button */
+    .menu-btn {
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: var(--font-body);
+      margin-bottom: 2rem;
+    }
+    /* Footer */
     .footer {
       position: fixed;
       bottom: 1rem;
@@ -62,8 +77,37 @@
       text-decoration: none;
       font-weight: bold;
     }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      position: relative;
+      width: 90%; max-width: 800px;
+      height: 80%; background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .modal-content iframe {
+      width: 100%; height: 100%; border: none;
+    }
+    .modal-close {
+      position: absolute;
+      top: 8px; right: 12px;
+      font-size: 1.5rem;
+      color: #333;
+      cursor: pointer;
+      z-index: 1010;
+    }
     @media (max-width: 768px) {
-      body { padding: 2rem 1rem 4rem; }
+      body { padding: 2rem 1rem calc(var(--footer-height) + 1rem); }
       .footer { bottom: 0.5rem; }
     }
     @media (max-width: 480px) {
@@ -75,9 +119,32 @@
   <!-- Header Pizza Logo -->
   <img src="183.png" alt="Andiamo’s Pizza Logo" class="header-logo">
   <h1>Andiamo Pizzeria Coming Soon</h1>
+
   <div class="spinner-wrap">
     <img src="pizza.gif" alt="Loading Andiamo’s Pizza">
   </div>
+
+  <button class="menu-btn" id="open-menu">See Our Menu</button>
+
+  <!-- Modal for menu -->
+  <div class="modal" id="menu-modal">
+    <div class="modal-content">
+      <span class="modal-close" id="close-menu">&times;</span>
+      <iframe src="https://ohbz.com/design/d1fe01cc-178c-49fc-8002-c04e7f6505ff"></iframe>
+    </div>
   </div>
+
+  <div class="footer">
+    Webdesign By: <a href="https://seatechconsulting.com" target="_blank">Seatech Consulting</a>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById('open-menu');
+    const modal = document.getElementById('menu-modal');
+    const closeBtn = document.getElementById('close-menu');
+    openBtn.addEventListener('click', () => modal.style.display = 'flex');
+    closeBtn.addEventListener('click', () => modal.style.display = 'none');
+    modal.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
+  </script>
 </body>
 </html>
