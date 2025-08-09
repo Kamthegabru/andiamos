@@ -4,8 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andiamo Pizzeria Coming Soon</title>
-  <!-- Google Font for attractive heading -->
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZFFP0FP8H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-4ZFFP0FP8H');
+  </script>
   <style>
     :root {
       --bg: #fdfdfd;
@@ -58,7 +66,7 @@
     }
     /* Gift button */
     .gift-btn {
-      background: #a8e6cf;    /* light green */
+      background: #a8e6cf;   /* light green */
       color: var(--accent);
       border: 2px solid var(--accent);
       padding: 0.75rem 1.5rem;
@@ -135,7 +143,6 @@
   </style>
 </head>
 <body>
-  <!-- Header Pizza Logo -->
   <img src="183.png" alt="Andiamo’s Pizza Logo" class="header-logo">
   <h1>Andiamo Pizzeria Coming Soon</h1>
 
@@ -146,10 +153,8 @@
   <p class="gift-text">Want to Gift Our Pizza?</p>
   <a href="https://www.toasttab.com/andiamopdx/giftcards" target="_blank" class="gift-btn">Buy Gift Card</a>
 
-  <!-- Menu button -->
   <button class="menu-btn" id="open-menu">See Our Menu</button>
 
-  <!-- Modal for menu -->
   <div class="modal" id="menu-modal">
     <div class="modal-content">
       <span class="modal-close" id="close-menu">&times;</span>
@@ -171,4 +176,3 @@
   </script>
 </body>
 </html>
-
